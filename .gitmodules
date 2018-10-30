@@ -1,0 +1,3 @@
+[submodule "public/src/common"]
+	path = public/src/common
+	url = git@github.com:schwarzdavid/oeamtc-common.git
