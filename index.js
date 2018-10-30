@@ -4,10 +4,10 @@ const path = require('path');
 const httpServer = express();
 
 let mainWindow;
-let frontendUrl;
+let internalPort;
 
 function generateFrontendUrl() {
-	return `http://${frontendUrl.address}:${frontendUrl.port}`;
+	return `http://localhost:${internalPort}/`;
 }
 
 function createWindow() {
@@ -16,7 +16,7 @@ function createWindow() {
 		height: 600
 	});
 
-	if(frontendUrl){
+	if(internalPort){
 		mainWindow.loadURL(generateFrontendUrl());
 	}
 
@@ -43,16 +43,16 @@ httpServer.get('*', (req, res) => {
 });
 
 const httpListener = httpServer.listen({
+	hostname: 'localhost',
 	port: 8000
 }, (err) => {
 	if(err){
 		console.log(err);
 		throw new Error('Cannot start internal http server');
 	}
-	frontendUrl = httpListener.address();
+	internalPort = httpListener.address().port;
 
-	const url = generateFrontendUrl();
-	console.log(`Internal HTTP Server listening on ${url}`);
+	console.log(`Internal HTTP Server listening on port ${internalPort}`);
 
 	if(mainWindow){
 		mainWindow.loadURL(url);

@@ -3,14 +3,8 @@
   background: url(images/start-background.jpg) no-repeat center center;
   background-size: cover;
 }
-.transparentBg[data-v-804b837c] {
-  background: transparent !important;
-}
-.transparentBg a[data-v-804b837c] {
-    color: inherit;
-}
 .withMaxWidth[data-v-804b837c] {
-  max-width: 500px !important;
+  max-width: 650px !important;
 }
 
 /* MaterialDesignIcons.com */
