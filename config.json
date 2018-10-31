@@ -1,0 +1,6 @@
+{
+  "ssl": {
+    "cert": "C:\\Users\\schwa\\.ssl\\localhost.crt",
+    "key": "C:\\Users\\schwa\\.ssl\\localhost.key"
+  }
+}

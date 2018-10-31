@@ -9373,6 +9373,7 @@ table.v-table tfoot tr td{padding:0 24px
 
 html, body {
   height: 100%;
+  overflow: hidden;
 }
 #app, .application--wrap {
   min-height: 100%;

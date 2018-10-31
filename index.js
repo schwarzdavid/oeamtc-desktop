@@ -1,13 +1,11 @@
 const {app, BrowserWindow} = require('electron');
-const express = require('express');
-const path = require('path');
-const httpServer = express();
+const web = require('./server');
 
 let mainWindow;
 let internalPort;
 
 function generateFrontendUrl() {
-	return `http://localhost:${internalPort}/`;
+	return `https://localhost:${internalPort}/`;
 }
 
 function createWindow() {
@@ -25,6 +23,8 @@ function createWindow() {
 	});
 }
 
+app.commandLine.appendSwitch('ignore-certificate-errors', 'true');
+
 app.on('ready', createWindow);
 app.on('window-all-closed', () => {
 	if(process.platform !== 'darwin') {
@@ -37,24 +37,12 @@ app.on('activate', () => {
 	}
 });
 
-httpServer.use(express.static(path.resolve(__dirname, './public/dist')));
-httpServer.get('*', (req, res) => {
-	return res.sendFile(path.resolve(__dirname, 'public/dist/index.html'));
-});
-
-const httpListener = httpServer.listen({
-	hostname: 'localhost',
-	port: 8000
-}, (err) => {
-	if(err){
-		console.log(err);
-		throw new Error('Cannot start internal http server');
-	}
-	internalPort = httpListener.address().port;
-
-	console.log(`Internal HTTP Server listening on port ${internalPort}`);
-
+web.run().then(port => {
+	internalPort = port;
 	if(mainWindow){
-		mainWindow.loadURL(url);
+		mainWindow.loadURL(generateFrontendUrl());
 	}
+}).catch(err => {
+    console.log(err);
+    throw new Error('Cannot start internal http server');
 });
