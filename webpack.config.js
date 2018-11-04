@@ -20,7 +20,7 @@ const config = {
 	resolve: {
 		extensions: ['.js', '.ts', '.vue'],
 		alias: {
-			'core': path.resolve(publicSrcRoot, 'common/src'),
+			'core': path.resolve(publicSrcRoot, 'core'),
 			'@': root,
 			'~': path.resolve(root, 'node_modules')
 		}
