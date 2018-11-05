@@ -1,7 +1,9 @@
 import {config} from './core/plugins/config/lib';
 
+console.log('Setting config now');
+
 const defaultConfig = {
-    missionRoute: '/mission/begin'
+    useDefaultMissionRoutes: false
 };
 
 config.inject(defaultConfig);

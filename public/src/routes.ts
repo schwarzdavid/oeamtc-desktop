@@ -9,27 +9,12 @@ router.addRoutes([
         path: '/mission',
         name: 'mission',
         component: MissionComponent,
-        beforeEnter(to, from, next){
-            const missionRoute = config.get('missionRoute');
-            if(!store.state.missions.assignedMission || !missionRoute) {
-                return next('/');
-            }
-            return next();
-        },
         children: [
             {
-                path: 'begin',
-                name: 'begin',
+                path: 'arrival',
+                name: 'arrival',
                 component: BeginComponent
             }
         ]
     }
 ]);
-
-router.beforeEach((to, from, next) => {
-    const missionRoute = config.get('missionRoute');
-    if(store.state.missions.assignedMission && missionRoute && !to.matched.find(route => route.path === missionRoute)) {
-        return next(missionRoute);
-    }
-    return next();
-});
