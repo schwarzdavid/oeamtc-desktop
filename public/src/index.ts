@@ -1,6 +1,10 @@
 import './config';
-import './routes';
+import './router';
 
 import Oeamtc from 'core/Core.vue';
 
-new Oeamtc().$mount('#app');
+const App = Oeamtc.extend({
+
+});
+
+new App().$mount('#app');
