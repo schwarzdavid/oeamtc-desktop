@@ -11,7 +11,7 @@ const publicDistRoot = path.resolve(publicRoot, 'dist');
 
 const config = {
 	name: 'driver',
-	target: 'web',
+	target: 'electron-renderer',
 	entry: path.resolve(publicSrcRoot, 'index.ts'),
 	output: {
 		path: publicDistRoot,

@@ -1,8 +1,10 @@
 {
 	"compilerOptions": {
 		"module": "commonjs",
+		"moduleResolution": "node",
 		"target": "es6",
 		"sourceMap": true,
+		"allowJs": true,
 		"lib": [
 			"es6",
 			"scripthost",

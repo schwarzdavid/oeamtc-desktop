@@ -1,18 +1,18 @@
 
+.sectionCaption[data-v-1a1fb207] {
+  text-transform: uppercase;
+  opacity: .7;
+  font-size: .95rem;
+  font-style: italic;
+}
+
+
 .withBg[data-v-45c5a1fa] {
   background: url(images/start-background.jpg) no-repeat center center;
   background-size: cover;
 }
 .withMaxWidth[data-v-45c5a1fa] {
   max-width: 650px !important;
-}
-
-
-.sectionCaption[data-v-1a1fb207] {
-  text-transform: uppercase;
-  opacity: .7;
-  font-size: .95rem;
-  font-style: italic;
 }
 
 /* MaterialDesignIcons.com */

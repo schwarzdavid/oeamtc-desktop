@@ -1,7 +1,7 @@
 import {config} from "./core/plugins/config/lib";
 import {events} from './core/lib/Utils';
 import {RouteConfig} from "vue-router";
-import RegisterComponent from './components/mission/Register.vue';
+import RegisterComponent from './components/custom/Register.vue';
 import AtWorkComponent from './components/mission/AtWork.vue';
 
 const routes = config.get('routes');
@@ -9,13 +9,7 @@ const routes = config.get('routes');
 events.on('mission-routes', event => {
     const missionRoutes: RouteConfig[] = event.data;
 
-    missionRoutes.push({
-        path: 'register',
-        name: 'register',
-        component: RegisterComponent
-    });
-
-    //missionRoutes.find(route => route.name === routes.atWork).component = AtWorkComponent;
+    missionRoutes.find(route => route.name === routes.atWork).component = AtWorkComponent;
 
     return missionRoutes;
 });
