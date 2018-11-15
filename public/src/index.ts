@@ -1,10 +1,7 @@
 import './config';
 import './router';
+import './hooks';
 
 import Oeamtc from 'core/Core.vue';
 
-const App = Oeamtc.extend({
-
-});
-
-new App().$mount('#app');
+new Oeamtc().$mount('#app');

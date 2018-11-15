@@ -9,7 +9,11 @@ const routes = config.get('routes');
 events.on('mission-routes', event => {
     const missionRoutes: RouteConfig[] = event.data;
 
-    missionRoutes.find(route => route.name === routes.atWork).component = AtWorkComponent;
+    const atWorkRoute = missionRoutes.find(route => route.name === routes.atWork);
+
+    if (atWorkRoute) {
+        atWorkRoute.component = AtWorkComponent;
+    }
 
     return missionRoutes;
 });

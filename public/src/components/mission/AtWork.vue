@@ -10,7 +10,7 @@
 
 <script lang="ts">
     import Vue from 'vue';
-    import MissionActions from '../../core/components/partials/MissionActions.vue';
+    import MissionActions from '../../core/components/ui/MissionActions.vue';
     import Register from '../custom/Register.vue';
 
     export default Vue.extend({

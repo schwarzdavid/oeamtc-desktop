@@ -18,7 +18,7 @@
 
 <script lang="ts">
 	import Vue from 'vue';
-    import LoadingSpinner from '../../core/components/partials/LoadingSpinner.vue';
+    import LoadingSpinner from '../../core/components/common/LoadingSpinner.vue';
 
     const path = require('path');
     const child = require('child_process');
