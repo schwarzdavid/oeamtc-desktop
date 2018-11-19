@@ -2,6 +2,6 @@ import './config';
 import './router';
 import './hooks';
 
-import Oeamtc from 'core/Core.vue';
+import Main from './components/Main.vue';
 
-new Oeamtc().$mount('#app');
+new Main().$mount('#app');

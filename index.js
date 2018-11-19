@@ -1,5 +1,6 @@
 const {app, BrowserWindow} = require('electron');
 const web = require('./server');
+const path = require('path');
 
 let mainWindow;
 let internalPort;
@@ -10,8 +11,10 @@ function generateFrontendUrl() {
 
 function createWindow() {
 	mainWindow = new BrowserWindow({
-		width: 1024,
-		height: 768
+		minWidth: 1024,
+		minHeight: 768,
+		icon: path.resolve(__dirname, 'icon.png'),
+		autoHideMenuBar: true
 	});
 
 	if(internalPort){
