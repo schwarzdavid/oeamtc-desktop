@@ -25,6 +25,7 @@
 		methods: {
 		    onRegisterClosed(){
 		        this.registerOpen = false;
+		        events.emit('register-finished');
 		    },
 
 			openRegister(){
