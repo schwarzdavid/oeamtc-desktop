@@ -6,7 +6,7 @@ let mainWindow;
 let internalPort;
 
 function generateFrontendUrl() {
-	return `https://localhost:${internalPort}/`;
+	return `http://localhost:${internalPort}/`;
 }
 
 function createWindow() {

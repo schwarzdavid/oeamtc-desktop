@@ -1,14 +1,15 @@
 const express = require('express');
 const path = require('path');
-const https = require('https');
+const http = require('http');
 const config = require('./config');
 const fs = require('fs');
 
 const app = express();
-const server = https.createServer({
+/*const server = https.createServer({
     key: fs.readFileSync(config.ssl.key, 'utf8'),
     cert: fs.readFileSync(config.ssl.cert, 'utf8')
-}, app);
+}, app);*/
+const server = http.createServer(app);
 
 app.use(express.static(path.resolve(__dirname, './public/dist')));
 app.get('*', (req, res) => {
